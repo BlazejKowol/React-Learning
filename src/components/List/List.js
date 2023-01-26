@@ -1,7 +1,6 @@
 import styles from './List.module.scss';
 import Column from '../Column/Column';
 import ColumnForm from '../ColumnForm/ColumnForm';
-import CardForm from '../CardForm/CardForm';
 import shortid from 'shortid';
 import { useState } from 'react';
 
@@ -58,7 +57,7 @@ const List = () => {
         <header className={styles.header}><h2 className={styles.title}>Things to do <span>soon</span></h2></header>
         <p className={styles.description}>Interesting things I want to check out</p>
         <div className={styles.columns}>
-        {columns.map(column => <Column key={column.id} id={column.id} title={column.title} icon={column.icon} cards={column.cards} />)}
+        {columns.map(column => <Column key={column.id} id={column.id} title={column.title} icon={column.icon} cards={column.cards} action={addCard} />)}
         </div>
         <ColumnForm action={addColumn} />
       </div>  

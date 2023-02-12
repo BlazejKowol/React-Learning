@@ -10,7 +10,7 @@ const SearchForm = () => {
     const dispatch = useDispatch();
     const handleSubmit = e => {
         e.preventDefault();
-        dispatch({ type: 'SEARCH_INPUT',  payload: { search } });
+        dispatch({ type: 'SEARCH_INPUT',  payload: search });
     }
 
     return (
@@ -24,9 +24,3 @@ const SearchForm = () => {
   };
 
   export default SearchForm;
-
-  /*const [text, setText] = useState();
-  const handleSubmit = e => {
-      e.preventDefault();
-      dispatch({ type: 'SEARCH_INPUT', payload: { text } });
-      setText('');*/

@@ -1,0 +1,23 @@
+@import '../../styles/settings.scss';
+
+.nav {
+    display: inline-block;
+    background-color: darken($color-dark, 3%);
+    width: 100%
+}
+
+.navi {
+    display: flex;
+    justify-content: space-between;
+}
+
+.list {
+    list-style: none;
+}
+
+.link {
+    text-decoration: none;
+    color: white;
+    padding-inline: 7px;
+    font-weight: bold;
+}

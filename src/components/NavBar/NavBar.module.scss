@@ -11,8 +11,14 @@
     justify-content: space-between;
 }
 
+.icon {
+    font-size: 24px;
+}
+
 .list {
     list-style: none;
+    display: flex;
+    align-items: center;
 }
 
 .link {

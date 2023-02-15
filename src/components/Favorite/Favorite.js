@@ -1,9 +1,10 @@
 import styles from './Favorite.module.scss';
+import PageTitle from '../PageTitle/PageTitle';
 
 const Favorite = () => {
   return (
     <div className={styles.hero}>
-      <h1 className={styles.title}>Favorite</h1>
+      <PageTitle>Favorite</PageTitle>
       <p className={styles.subtitle}>Lorem Ipsum</p>
     </div>
   );

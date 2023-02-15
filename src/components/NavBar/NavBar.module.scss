@@ -19,11 +19,22 @@
     list-style: none;
     display: flex;
     align-items: center;
+    
+    li {
+        padding-inline: 7px;
+        font-weight: bold;
+    }
+
+    a {
+        text-decoration: none;
+        color: white;
+    }
+    
+    .linkActive {
+        color: $color-warning;
+    }
 }
 
-.link {
-    text-decoration: none;
-    color: white;
-    padding-inline: 7px;
-    font-weight: bold;
+.linkActive {
+    color: $color-warning;
 }

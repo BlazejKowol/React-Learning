@@ -21,6 +21,7 @@ export const getColumnsByList = ({ columns }, listId) =>
 export const addColumn = payload => ({ type: 'ADD_COLUMN', payload });
 export const addCard = payload => ({ type: 'ADD_CARD', payload });
 export const searchInput = payload => ({ type: 'SEARCH_INPUT', payload });
+export const addList = payload => ({ type: 'ADD_LIST', payload });
 
 const reducer = (state, action) => {
   switch(action.type) {
@@ -30,6 +31,8 @@ const reducer = (state, action) => {
       return {...state, cards:[...state.cards, {...action.payload, id: shortid()}] }
     case 'SEARCH_INPUT':
       return {...state, search: action.payload }
+    case 'ADD_LIST':
+      return {...state, lists: [...state.lists, {...action.payload, id: shortid()}]}
     default: 
       return state;
   } 

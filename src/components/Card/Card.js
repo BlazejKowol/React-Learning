@@ -3,7 +3,7 @@ import Button from '../Button/Button';
 import clsx from 'clsx';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
-import { toggleCardFavorite } from '../../redux/store';
+import { toggleCardFavorite } from '../../redux/cardsRedux';
 
 
 const Card = props => {

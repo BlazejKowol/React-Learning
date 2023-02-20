@@ -1,9 +1,8 @@
 import styles from './Card.module.scss';
-import Button from '../Button/Button';
 import clsx from 'clsx';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
-import { toggleCardFavorite } from '../../redux/cardsRedux';
+import { removeCard, toggleCardFavorite } from '../../redux/cardsRedux';
 
 
 const Card = props => {
@@ -12,20 +11,32 @@ const Card = props => {
     const [isFavorite, setIsFavorite] = useState(props.isFavorite);
     const cardId = props.cardId;
 
-    const handleSubmit = e => {
+    const toggleFavorite = e => {
         e.preventDefault();
         dispatch(toggleCardFavorite(cardId));
-        setIsFavorite('');
+        setIsFavorite(!isFavorite);
+    }
+
+    const cardRemove = e => {
+        e.preventDefault();
+        dispatch(removeCard(cardId))
     }
 
     return (
         <li className={styles.card}>
             {props.title}
-            <Button 
-            className={clsx(styles.favoriteIcon, isFavorite && styles.isFavorite)} 
-            onClick={handleSubmit}>
-                <i className='fa fa-star-o'></i>
-            </Button>
+            <div className={styles.button}>
+                <button 
+                className={clsx(styles.icon, isFavorite && styles.isFavorite)} 
+                onClick={toggleFavorite}>
+                    <i className='fa fa-star-o'></i>
+                </button>
+                <button 
+                className={clsx(styles.icon)} 
+                onClick={cardRemove}>
+                    <i className='fa fa-trash'></i>
+                </button>
+            </div>
         </li>
         
     );

@@ -12,3 +12,18 @@
     font-weight: bold;
 }
 
+.button {
+    display: flex;
+    justify-content: end;
+}
+
+.icon {
+    background: none;
+    cursor: pointer;
+    border: none;
+}
+
+.isFavorite {
+    color: #f1c40f;
+}
+
